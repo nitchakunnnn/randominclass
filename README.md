@@ -1,4 +1,3 @@
-# https://tuliptgr.github.io/randominclass/
 # คณะผู้จัดทำ
 # ประโยชน์
 - สุ่มที่นั่ง
@@ -9,3 +8,6 @@
   - กำหนดสมาขิก
 # วิธีการใช้
 # ตัวอย่างการใช้งาน
+ลิงค์
+- https://pccstacth-my.sharepoint.com/:o:/g/personal/krittin3821_pccst_ac_th/EuMgTJphT2pMujJgp0I5hbQBByni-M7Wl2bais-vMCXDsg?e=LsZ3kK
+- https://tuliptgr.github.io/randominclass/
