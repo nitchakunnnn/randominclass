@@ -1,6 +1,5 @@
-# RandomInClass
-![RandomInClass](https://www.flaticon.com/svg/static/icons/svg/3399/3399575.svg)
-
+# RandomInClass 
+![presentation](https://user-images.githubusercontent.com/71317453/93663269-d096cd80-fa90-11ea-8ce1-6f435534ff98.png)
 --------------------------------------------------------------------------------
 
 ## Organizers
