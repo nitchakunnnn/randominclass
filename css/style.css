@@ -1,2 +1,8 @@
 /* CSS Document */
-
+.section-header{
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+.footer-divider{
+	margin:3rem 0rem 3rem 0rem;
+}
