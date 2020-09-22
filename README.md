@@ -1,15 +1,15 @@
-# Random In Class 
- ![presentation](https://user-images.githubusercontent.com/71317453/93663269-d096cd80-fa90-11ea-8ce1-6f435534ff98.png) 
+![เสือชโงก](https://user-images.githubusercontent.com/71317453/93861076-2619e700-fcea-11ea-9143-d106b355558f.gif)  Random In Class 
+<img src="https://user-images.githubusercontent.com/71317453/93861076-2619e700-fcea-11ea-9143-d106b355558f.gif" width="500px">
 --------------------------------------------------------------------------------
 
-## Organizers
+# Organizers
 --------------------------------------------------------------------------------
 * Krittin Kunaree
 * Kloria Aman
 * Fern donlaphak  Phiriyathai
 --------------------------------------------------------------------------------
 
-## Operations
+# Operations
 
 Set the table                                                                                                                 | specify the number of people                                                                                                     | 2 people sitting close to each other                                                                                                      | customized                                                                                                      | Numbers next to each other do not sit close to each other                                                                                                      | Force row                                                                                                                 | Force column                                                                                                                 | random grouping                                                                                                                 | Define a member                                                                                                                 | 2 languages
 :----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :---------------:
@@ -23,9 +23,9 @@ Set the table                                                                   
 --------------------------------------------------------------------------------
 
 # Links
-*   [1]( https://pccstacth-my.sharepoint.com/:o:/g/personal/krittin3821_pccst_ac_th/EuMgTJphT2pMujJgp0I5hbQBByni-M7Wl2bais-vMCXDsg?e=LsZ3kK)
-*   [2]( https://tuliptgr.github.io/randominclass/)
-*   [3]( https://github.com/tuliptgr/randominclass)
+*   [onenote]( https://pccstacth-my.sharepoint.com/:o:/g/personal/krittin3821_pccst_ac_th/EuMgTJphT2pMujJgp0I5hbQBByni-M7Wl2bais-vMCXDsg?e=LsZ3kK)
+*   [ramdominclass]( https://tuliptgr.github.io/randominclass/)
+*   [github]( https://github.com/tuliptgr/randominclass)
 --------------------------------------------------------------------------------
 
 
