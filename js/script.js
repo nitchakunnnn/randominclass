@@ -1,8 +1,8 @@
 function checkConditionFunc() {
   // Get the checkbox
-  var checkBox = document.getElementById("checkCondition");
+  let checkBox = document.getElementById("checkCondition");
   // Get the output text
-  var div = document.getElementById("conditionCheckedDiv");
+  let div = document.getElementById("conditionCheckedDiv");
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){

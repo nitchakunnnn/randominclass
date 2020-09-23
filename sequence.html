@@ -64,38 +64,40 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="mb-3 mt-3">
-						<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
-						<input class="form-control" id="quantityStudents" placeholder="24..." required>
-					</div>
-					<div class="mb-3 form-check">
-					  <input class="form-check-input" type="checkbox" value="" id="checkCondition" onclick="checkConditionFunc()">
-					  <label class="form-check-label" for="checkCondition">
-						มีเงื่อนไข
-					  </label>
-					</div>
-					<div id="conditionCheckedDiv" style="display:none">
-						<div class="mb-3">
-							<label for="startSequence" class="form-label">เลขที่ที่อยากนำเสนอก่อน</label>
-							<input class="form-control" id="startSequence" placeholder="เลขที่ เช่น 1 2 3...">
+					<form class="needs-validation" action="#result">
+						<div class="mb-3 mt-3">
+							<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
+							<input class="form-control" id="quantityStudents" placeholder="24..." required>
 						</div>
-						<div class="mb-3">
-							<label for="endSequence" class="form-label">เลขที่ที่อยากนำเสนอหลัง</label>
-							<input class="form-control" id="endSequence" placeholder="เลขที่ เช่น ...22 23 24">
+						<div class="mb-3 form-check">
+						  <input class="form-check-input" type="checkbox" value="" id="checkCondition" onclick="checkConditionFunc()">
+						  <label class="form-check-label" for="checkCondition">
+							มีเงื่อนไข
+						  </label>
 						</div>
-						<div class="mb-3">
-							<label for="unuseSequence" class="form-label">เลขที่ที่ไม่พร้อมนำเสนอ</label>
-							<input class="form-control" id="unuseSequence" placeholder="เลขที่ เช่น 2 4 8...">
+						<div id="conditionCheckedDiv" style="display:none">
+							<div class="mb-3">
+								<label for="startSequence" class="form-label">เลขที่ที่ต้องการเริ่มก่อน</label>
+								<input class="form-control" id="startSequence" placeholder="เลขที่ เช่น 1,2,3...">
+							</div>
+							<div class="mb-3">
+								<label for="endSequence" class="form-label">เลขที่ที่ต้องการเริ่มหลัง</label>
+								<input class="form-control" id="endSequence" placeholder="เลขที่ เช่น ...22,23,24">
+							</div>
+							<div class="mb-3">
+								<label for="unuseSequence" class="form-label">เลขที่ที่ไม่พร้อมนำเสนอ</label>
+								<input class="form-control" id="unuseSequence" placeholder="เลขที่ เช่น 2,4,8...">
+							</div>
 						</div>
-					</div>
-					<div class="mt-3">
-						<button type="button" class="btn btn-primary">สุ่ม</button>
-					</div>
+						<div class="mt-3">
+							<button type="button" class="btn btn-primary" onclick="randomFunc()">สุ่ม</button>
+						</div>
+				</form>
 				</div>
 				<div class="col-md-6">
 					<div class="mb-3 mt-3 h-100">
 						<label for="result" class="form-label">ผลลัพธ์</label>
-						<textarea class="form-control h-100" aria-label="result" disabled></textarea>
+						<textarea class="form-control h-100" aria-label="result" id="result" disabled></textarea>
 					</div>
 				</div>
 			</div>
