@@ -81,12 +81,12 @@
 						<input class="form-control" id="quantityRow" placeholder="3...">
 					</div>
 					<div class="mb-3 form-check">
-					  <input class="form-check-input" type="checkbox" value="" id="flexCheckCondition">
-					  <label class="form-check-label" for="flexCheckCondition">
+					  <input class="form-check-input" type="checkbox" value="" id="checkCondition" onclick="checkConditionFunc()">
+					  <label class="form-check-label" for="checkCondition">
 						มีเงื่อนไข
 					  </label>
 					</div>
-					<div class="conditionChecked">
+					<div id="conditionCheckedDiv" style="display:none">
 						<div class="mb-3">
 							<label for="rowNumber" class="form-label">บังคับแถว</label>
 							<input class="form-control" id="rowNumber" placeholder="(เลขที่,แถว) เช่น (1,2),(3,4)...">
@@ -126,5 +126,7 @@
     <!-- Optional JavaScript -->
     <!-- Popper.js first, then Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/seat.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
