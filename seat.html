@@ -66,11 +66,19 @@
 				<div class="col-md-6">
 					<div class="mb-3 mt-3">
 						<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
-						<input class="form-control" list="datalistOptions" id="quantityStudents" placeholder="24...">
+						<input class="form-control" id="quantityStudents" placeholder="24..." required>
+					</div>
+					<div class="mb-3">
+						<label for="classroom" class="form-label">ห้อง</label>
+						<select class="form-select" id="classroom" required>
+						  <option value="1" selected>ห้องทั่วไป</option>
+						  <option value="2">ห้องทั่วไป (new normal)</option>
+						  <option value="3">ระบุแถว</option>
+						</select>
 					</div>
 					<div class="mb-3">
 						<label for="quantityRow" class="form-label">จำนวนแถว</label>
-						<input class="form-control" list="datalistOptions" id="quantityRow" placeholder="3...">
+						<input class="form-control" id="quantityRow" placeholder="3...">
 					</div>
 					<div class="mb-3 form-check">
 					  <input class="form-check-input" type="checkbox" value="" id="flexCheckCondition">
@@ -80,16 +88,16 @@
 					</div>
 					<div class="conditionChecked">
 						<div class="mb-3">
-							<label for="notCloseNumber" class="form-label">เลขที่ที่ห้ามอยู่ติดกันกลุ่มเดียวกัน</label>
-							<input class="form-control" id="notCloseNumber" placeholder="(1,2,3),(4,5,6)...">
-						</div>
-						<div class="mb-3">
-							<label for="closeNumber" class="form-label">เลขที่ที่ต้องอยู่ติดเดียวกัน</label>
-							<input class="form-control" id="closeNumber" placeholder="(1,2),(4,5)...">
-						</div>
-						<div class="mb-3">
 							<label for="rowNumber" class="form-label">บังคับแถว</label>
-							<input class="form-control" id="rowNumber" placeholder="(1,2),(4,5)...">
+							<input class="form-control" id="rowNumber" placeholder="(เลขที่,แถว) เช่น (1,2),(3,4)...">
+						</div>
+						<div class="mb-3">
+							<label for="notCloseNumber" class="form-label">เลขที่ที่ห้ามอยู่ติดกัน</label>
+							<input class="form-control" id="notCloseNumber" placeholder="(เลขที่,เลขที่,..) เช่น (1,2),(3,4,5)...">
+						</div>
+						<div class="mb-3">
+							<label for="closeNumber" class="form-label">เลขที่ที่ต้องอยู่ติดกัน</label>
+							<input class="form-control" id="closeNumber" placeholder="(เลขที่,เลขที่,..) เช่น (1,2),(3,4,5)...">
 						</div>
 					</div>
 					<div class="mt-3">
