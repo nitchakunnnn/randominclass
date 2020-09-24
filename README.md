@@ -1,14 +1,11 @@
 # Random In Class ![เสือชโงก](https://user-images.githubusercontent.com/71317453/93861076-2619e700-fcea-11ea-9143-d106b355558f.gif)  
 
---------------------------------------------------------------------------------
 
 ## Organizers
---------------------------------------------------------------------------------
-**Krittin Kunaree**
-
-**Kloria Aman**
-
-**Fern donlaphak Phiriyathai**
+-------------------------------------------------------------------------------
+* Krittin Kunaree
+* Kloria Aman
+* Fern donlaphak Phiriyathai
 --------------------------------------------------------------------------------
 
 ## Operations
@@ -19,12 +16,19 @@ Set up a table with a specific number of people                                 
 --------------------------------------------------------------------------------
 
 ## How to use
+### _Random order_
+* For the grading of presentations by setting conditions such as want to present first. Want to present the latter Or don't want to present The output format will come out in the order of the conditional presentation.
+### _Random grouping_
+* For grouping, classroom work must tell the room members and the number of groups they want to be organized.
+### _Random seats_
+* Is the seating arrangement of each person in the room by random number under the conditions
 --------------------------------------------------------------------------------
 
 ## Examples of use
 ### *Random order*
 ![Screenshot (3)](https://user-images.githubusercontent.com/71317449/94093655-ed901f80-fe47-11ea-93dc-90ef399719b9.png)
-
+### *Random grouping*
+### *Random seats*
 --------------------------------------------------------------------------------
 
 ## Links
