@@ -4,9 +4,11 @@
 
 ## Organizers
 --------------------------------------------------------------------------------
-* Krittin Kunaree
-* Kloria Aman
-* Fern donlaphak  Phiriyathai
+**Krittin Kunaree**
+
+**Kloria Aman**
+
+**Fern donlaphak Phiriyathai**
 --------------------------------------------------------------------------------
 
 ## Operations
