@@ -53,12 +53,13 @@ function randomFunc(){
 		let ind = 1;
 		for(let i = 0 ; i < quantityGroupsInt ; i++){
 			if(iSshowIndex)
-				result.value += 'กลุ่มที่ ' + (i+1).toString() + ' :   ';
+				result.value += 'กลุ่มที่ ' + (i+1).toString() + ' :  ';
 			for(let j=0 ; j < Math.floor(quantityStudentsInt/quantityGroupsInt)+((quantityStudentsInt%quantityGroupsInt-(i)>0)?1:0); j++){
-				result.value += arraySequence[ind-1] + '\t';	
+				result.value += arraySequence[ind-1] + ', ';	
 				ind++;
 				
 			}
+			result.value = result.value.slice(0, -2);
 			result.value += '\n';
 		}
 	}
