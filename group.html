@@ -74,6 +74,12 @@
 							<input class="form-control" id="quantityGroups" placeholder="6..." required>
 						</div>
 						<div class="mb-3 form-check">
+						  <input class="form-check-input" type="checkbox" value="" id="showIndex" checked>
+						  <label class="form-check-label" for="showIndex">
+							ใส่ลำดับ
+						  </label>
+						</div>
+						<div class="mb-3 form-check">
 						  <input class="form-check-input" type="checkbox" value="" id="checkCondition" onclick="checkConditionFunc()">
 						  <label class="form-check-label" for="checkCondition">
 							มีเงื่อนไข
@@ -97,7 +103,7 @@
 				<div class="col-md-6">
 					<div class="mb-3 mt-3 h-100">
 						<label for="result" class="form-label">ผลลัพธ์</label>
-						<textarea class="form-control h-100" aria-label="result" disabled></textarea>
+						<textarea class="form-control h-100" aria-label="result" id="result" disabled></textarea>
 					</div>
 				</div>
 			</div>
