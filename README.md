@@ -27,7 +27,8 @@ Set up a table with a specific number of people                                 
 ## Examples of use
 ### *Random order*
 ![Screenshot (3)](https://user-images.githubusercontent.com/71317449/94093655-ed901f80-fe47-11ea-93dc-90ef399719b9.png)
-
+### *Random grouping*
+### *Random seats*
 --------------------------------------------------------------------------------
 
 ## Links
