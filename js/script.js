@@ -11,3 +11,6 @@ function checkConditionFunc() {
     div.style.display = "none";
   }
 }// JavaScript Document// JavaScript Document
+function clearResult(){
+	document.getElementById("result").value = '';
+}
