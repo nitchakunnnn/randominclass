@@ -14,12 +14,14 @@ function randomFunc(){
 	if(quantityGroups == '')
 		quantityGroupsInt = 6;
 	
-	let arraySequence = (Array.from({length: quantityStudentsInt}, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
+	let arraySequence = getRandArray(quantityStudentsInt,quantityGroupsInt);
+	
 //	let arraystartSequence = (document.getElementById("startSequence").value).split(',').map(x=>+x);
 //	let arrayendSequence = (document.getElementById("endSequence").value).split(',').map(x=>+x);
 //	let unuseSequence = (document.getElementById("unuseSequence").value).split(',').map(x=>+x);
 	
 	if(isCheckBox){
+		
 //		let ind = 1;
 //		arraySequence = arraySequence.filter(x => !arraystartSequence.includes(x) );
 //		arraySequence = arraySequence.filter(x => !arrayendSequence.includes(x) );
@@ -50,17 +52,29 @@ function randomFunc(){
 //		}
 	}
 	else{
-		let ind = 1;
-		for(let i = 0 ; i < quantityGroupsInt ; i++){
+		for(let i = 0 ; i < arraySequence.length ; i++){
 			if(iSshowIndex)
 				result.value += 'กลุ่มที่ ' + (i+1).toString() + ' :  ';
-			for(let j=0 ; j < Math.floor(quantityStudentsInt/quantityGroupsInt)+((quantityStudentsInt%quantityGroupsInt-(i)>0)?1:0); j++){
-				result.value += arraySequence[ind-1] + ', ';	
-				ind++;
-				
+			for(let j=0 ; j < arraySequence[i].length; j++){
+				result.value += arraySequence[i][j] + ', ';
 			}
 			result.value = result.value.slice(0, -2);
 			result.value += '\n';
 		}
 	}
 }// JavaScript Document// JavaScript Document// JavaScript Document
+function getRandArray(quantityStudentsInt,quantityGroupsInt){
+	let ind = 0;
+	let arraySequence2d = [];
+	let temp = [];
+	let arraySequence = (Array.from({length: quantityStudentsInt}, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
+	for(let i = 0 ; i < quantityGroupsInt ; i++){
+		temp = [];
+		for(let j=0 ; j < Math.floor(quantityStudentsInt/quantityGroupsInt)+((quantityStudentsInt%quantityGroupsInt-(i)>0)?1:0); j++){
+			temp.push(arraySequence[ind]);
+			ind++;
+		}
+		arraySequence2d.push(temp);
+	}
+	return arraySequence2d
+}
