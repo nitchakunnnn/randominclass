@@ -71,15 +71,15 @@
 						</div>
 						<div class="mb-3">
 							<label for="classroom" class="form-label">ห้อง</label>
-							<select class="form-select" id="classroom" required>
-							  <option value="1" selected>ห้องทั่วไป</option>
-							  <option value="2">ห้องทั่วไป (new normal)</option>
+							<select class="form-select" id="classroom" onclick="roomFunc()" required>
+							  <option value="1">ห้องทั่วไป</option>
+							  <option value="2" selected>ห้องทั่วไป (new normal)</option>
 							  <option value="3">ระบุแถว</option>
 							</select>
 						</div>
-						<div class="mb-3">
-							<label for="quantityRow" class="form-label">จำนวนแถว</label>
-							<input class="form-control" id="quantityRow" placeholder="3...">
+						<div class="mb-3" id="columnDiv" style="display:none">
+							<label for="quantityColumn" class="form-label">จำนวนคอลัมน์</label>
+							<input class="form-control" id="quantityColumn" placeholder="3...">
 						</div>
 						<div class="mb-3 form-check">
 						  <input class="form-check-input" type="checkbox" value="" id="checkCondition" onclick="checkConditionFunc()">
@@ -101,15 +101,165 @@
 								<input class="form-control" id="closeNumber" placeholder="(เลขที่,เลขที่,..) เช่น (1,2),(3,4,5)...">
 							</div>
 						</div>
-						<div class="mt-3">
-							<button type="submit" class="btn btn-primary" onclick="randomFunc()">สุ่ม</button>
+						<div class="mb-3 mt-3">
+							<button type="button" id="randomButton" class="btn btn-primary" onclick="randomFunc()">สุ่ม</button>
+							<button type="button" class="btn btn-secondary" onclick="clearResult()">ล้าง</button>
 						</div>
 					</form>
 				</div>
 				<div class="col-md-6">
 					<div class="mb-3 mt-3 h-100">
 						<label for="result" class="form-label">ผลลัพธ์</label>
-						<textarea class="form-control h-100" aria-label="result" disabled></textarea>
+						<div id="result">
+							<div class="mb-3 row row-cols-6 g-2">
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+								<div class="col"><div class="p-3 border bg-white text-center">ที่นั่ง</div></div>
+							</div>
+							<div class="mb-3 row row-cols-4 g-2">
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row row-cols-2">
+										<div class="col pr-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+										<div class="col pl-0">
+											<div class="p-3 border bg-white text-center">ที่นั่ง</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

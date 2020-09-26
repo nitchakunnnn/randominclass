@@ -13,4 +13,5 @@ function checkConditionFunc() {
 }// JavaScript Document// JavaScript Document
 function clearResult(){
 	document.getElementById("result").value = '';
+	document.getElementById("result").innerHTML = '';
 }
