@@ -2,7 +2,6 @@ document.addEventListener('keydown', logKey);
 var isWhile = false;
 var i = 0;
 questions = [
-    ['ความรับผิดชอบต่อสังคม','Social responsibility'],
     ['โอกาส','Opportunity'],
     ['จุดยืน','Standpoint'],
     ['เยาวชน','Youth'],
@@ -26,5 +25,10 @@ function logKey(e) {
         document.getElementById("tx2").innerHTML = questions[i%questions.length][1];
         window.setTimeout( function(){}, 1000);
         i++;
+    }
+    if(e.code == 'Backspace'){
+        console.log(questions[(i-1)%questions.length][0]);
+        questions.splice((i-1)%questions.length, 1);
+        console.log(questions);
     }
 }
