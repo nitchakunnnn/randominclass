@@ -6,3 +6,28 @@
 .footer-divider{
 	margin:3rem 0rem 3rem 0rem;
 }
+
+.row-cols-7 > * {
+	flex: 0 0 auto;
+	width: 14.285714%;
+}
+.row-cols-8 > * {
+	flex: 0 0 auto;
+	width: 12.5%;
+}
+.row-cols-9 > * {
+	flex: 0 0 auto;
+	width: 11.111111%;
+}
+.row-cols-10 > * {
+	flex: 0 0 auto;
+	width: 10%;
+}
+.row-cols-11 > * {
+	flex: 0 0 auto;
+	width: 9.0909090%;
+}
+.row-cols-12 > * {
+	flex: 0 0 auto;
+	width: 8.3333333%;
+}
