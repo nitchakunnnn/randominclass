@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,7 +51,7 @@
 					<div class="row justify-content-md-center">
 					  <div class="col-lg-5 col-md-5 text-left align-self-center">
 						<h1 class="font-weight-light display-3">สุ่มที่นั่ง</h1>
-						<p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+						<p class="lead text-muted">สำหรับการจัดลำดับการนำเสนอโดยสามารถกำหนดเงื่อนไข เช่น ต้องการนำเสนอก่อน ต้องการนำเสนอหลัง หรือไม่ต้องการนำเสนอ รูปแบบผลลัพธ์จะออกมาตามลำดับการนำเสนอที่ถูกกำหนดเงื่อนไขไว้</p>
 					  </div>
 					  <div class="col-lg-3 col-md-3">
 						<img src="img/7.gif" width="100%">
@@ -68,13 +67,13 @@
 					<form class="needs-validation">
 						<div class="mb-3 mt-3">
 							<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
-							<input class="form-control" id="quantityStudents" placeholder="24..." required oninput="setTableFunc()">
+							<input class="form-control" id="quantityStudents" placeholder="24..." required="" oninput="setTableFunc()">
 						</div>
 						<div class="mb-3">
 							<label for="classroom" class="form-label">ห้อง</label>
-							<select class="form-select" id="classroom" onclick="setTableFunc()" required>
+							<select class="form-select" id="classroom" onclick="setTableFunc()" required="">
 							  <option value="1">ห้องทั่วไป</option>
-							  <option value="2" selected>ห้องทั่วไป (new normal)</option>
+							  <option value="2" selected="">ห้องทั่วไป (new normal)</option>
 							  <option value="3">ระบุคอลัมน์</option>
 							  <option value="4">5/2 (Δ)</option>
 							  <option value="5">5/5 (λ)</option>
@@ -110,7 +109,7 @@
 							</div>
 						</div>
 						<div class="mb-3 mt-3">
-							<button type="button" class="btn btn-primary" onclick="randomFunc()" disabled>สุ่ม</button>
+							<button type="button" class="btn btn-primary" onclick="randomFunc()" disabled="">สุ่ม</button>
 							<button type="button" class="btn btn-secondary" onclick="clearResult()">ล้าง</button>
 						</div>
 					</form>
@@ -129,7 +128,7 @@
 	</main>
 	<footer class="container my-5 pt-5 text-muted text-center text-small">
 		<hr class="footer-divider">
-		<p class="mb-1">&copy; 2020 TulipTGR and Team</p>
+		<p class="mb-1">© 2020 TulipTGR and Team</p>
 		<ul class="list-inline">
 		  <li class="list-inline-item"><a href="https://github.com/tuliptgr/randominclass" target="_blank">Github</a></li>
 		</ul>
@@ -139,5 +138,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/seat.js"></script>
     <script src="js/script.js"></script>
-  </body>
-</html>
+  
+</body></html>
