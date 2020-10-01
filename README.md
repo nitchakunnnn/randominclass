@@ -28,6 +28,7 @@ Set up a table with a specific number of people                                 
 ### *Random order*
 ![Screenshot (3)](https://user-images.githubusercontent.com/71317449/94093655-ed901f80-fe47-11ea-93dc-90ef399719b9.png)
 ### *Random grouping*
+![image](https://user-images.githubusercontent.com/71317449/94757855-b11f6f00-03c5-11eb-88e9-124d3484f293.png)
 ### *Random seats*
 --------------------------------------------------------------------------------
 
