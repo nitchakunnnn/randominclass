@@ -68,7 +68,7 @@
 					<form class="needs-validation">
 						<div class="mb-3 mt-3">
 							<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
-							<input class="form-control" id="quantityStudents" placeholder="24..." required>
+							<input class="form-control" id="quantityStudents" placeholder="24..." required oninput="setTableFunc()">
 						</div>
 						<div class="mb-3">
 							<label for="classroom" class="form-label">ห้อง</label>
@@ -92,6 +92,10 @@
 						  </label>
 						</div>
 						<div id="conditionCheckedDiv" style="display:none">
+							<div class="mb-3">
+								<label for="seatNumber" class="form-label">บังคับที่นั่ง</label>
+								<input class="form-control" id="seatNumber" placeholder="(เลขที่,โต๊ะ) เช่น (1,2),(3,4)...">
+							</div>
 							<div class="mb-3">
 								<label for="rowNumber" class="form-label">บังคับแถว</label>
 								<input class="form-control" id="rowNumber" placeholder="(เลขที่,แถว) เช่น (1,2),(3,4)...">
