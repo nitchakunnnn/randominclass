@@ -1,5 +1,4 @@
 document.addEventListener('keydown', logKey);
-var isWhile = false;
 var i = 0;
 questions = [
     ['โอกาส','Opportunity'],
