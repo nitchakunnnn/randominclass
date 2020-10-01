@@ -17,6 +17,14 @@ questions = [
     ['ความถูกต้อง','Correct'],
     ['ความรับผิดชอบต่อสังคม','Social responsibility'],
     ['ความซื่อสัตย์','Honesty'],
+    ['ประชาธิปไตย','Democracy'],
+    ['วิชาชีพ','Profession'],
+    ['สัญลักษณ','The symbol'],์
+    ['สิ่งแวดล้อม','Environment'],
+    ['อาชีพ','Career'],
+    ['ความคิด','The idea'],
+    ['ผู้สูงอาย','The elderly'],ุ
+    ['เพศศึกษา','Sex education'],
 ]
 
 function logKey(e) {

@@ -1,4 +1,6 @@
 var arrayTable = [];
+var numStudents = [];
+var numColumn = [];
 function setTableFunc(){
 
 	let result = document.getElementById("result");
@@ -6,14 +8,15 @@ function setTableFunc(){
 	let quantityStudents = document.getElementById("quantityStudents");
 	let quantityColumn = document.getElementById("quantityColumn");
 	let columnDiv = document.getElementById("columnDiv");
-	let numStudents = ( quantityStudents.value == '')? 24: parseInt(quantityStudents.value);
-	let numColumn = ( quantityColumn.value == '')? 6: parseInt(quantityColumn.value);
 	let temp = '';
 
 	columnDiv.style.display = "none";
 	quantityStudents.disabled = false;
+	document.getElementById("randomButton").disabled = false;
 	clearResult();
 	arrayTable = [];
+	numStudents = ( quantityStudents.value == '')? 24: parseInt(quantityStudents.value);
+	numColumn = ( quantityColumn.value == '')? 6: parseInt(quantityColumn.value);
 
 	switch(classroom.options[classroom.selectedIndex].value){
 		case '1':
@@ -172,4 +175,7 @@ function isCorrect(seatNumber,rowNumber,closeNumber,notCloseNumber){
 	return true;
 }
 function arraySetTable(){
+}
+function randomButtonDisabled(){
+	document.getElementById("randomButton").disabled = true;
 }
