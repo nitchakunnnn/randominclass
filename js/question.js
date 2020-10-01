@@ -18,11 +18,11 @@ questions = [
     ['ความซื่อสัตย์','Honesty'],
     ['ประชาธิปไตย','Democracy'],
     ['วิชาชีพ','Profession'],
-    ['สัญลักษณ','The symbol'],์
+    ['สัญลักษณ','The symbol'],
     ['สิ่งแวดล้อม','Environment'],
     ['อาชีพ','Career'],
     ['ความคิด','The idea'],
-    ['ผู้สูงอาย','The elderly'],ุ
+    ['ผู้สูงอาย','The elderly'],
     ['เพศศึกษา','Sex education'],
 ]
 
