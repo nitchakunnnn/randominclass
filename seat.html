@@ -84,11 +84,11 @@
 						<div class="mb-3 mt-3">
 							<label for="quantityStudents" class="form-label">จำนวนคนในห้อง</label>
 							<input class="form-control" id="quantityStudents" placeholder="24..." required=""
-								onclick="setTableFunc()" oninput="setTableFunc()"/>
+								onclick="setTableFunc()" oninput="setTableFunc()" />
 						</div>
 						<div class="mb-3">
 							<label for="classroom" class="form-label">ห้อง</label>
-							<select class="form-select" id="classroom" oninput="setTableFunc()" required="">
+							<select class="form-select" id="classroom" onclick="setTableFunc()" required="">
 								<option value="1">ห้องทั่วไป</option>
 								<option value="2" selected="">ห้องทั่วไป (new normal)</option>
 								<option value="3">ระบุคอลัมน์</option>
@@ -135,8 +135,7 @@
 							<button type="button" class="btn btn-primary" id="randomButton" onclick="randomFunc()">
 								สุ่ม
 							</button>
-							<button type="button" class="btn btn-secondary"
-								onclick="clearResult(); resetInput();">
+							<button type="button" class="btn btn-secondary" onclick="clearResult(); resetInput();">
 								ล้าง
 							</button>
 						</div>
@@ -147,125 +146,125 @@
 						<label for="result" class="form-label">ผลลัพธ์</label>
 						<div id="result">
 							<div class="mb-3 row row-cols-6 g-3">
-								<div class="col">
-									<div id="seat-1" class="py-3 border bg-white text-center">
-										1
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-1" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										1</div>
 								</div>
-								<div class="col">
-									<div id="seat-2" class="py-3 border bg-white text-center">
-										2
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-2" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										2</div>
 								</div>
-								<div class="col">
-									<div id="seat-3" class="py-3 border bg-white text-center">
-										3
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-3" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										3</div>
 								</div>
-								<div class="col">
-									<div id="seat-4" class="py-3 border bg-white text-center">
-										4
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-4" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										4</div>
 								</div>
-								<div class="col">
-									<div id="seat-5" class="py-3 border bg-white text-center">
-										5
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-5" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										5</div>
 								</div>
-								<div class="col">
-									<div id="seat-6" class="py-3 border bg-white text-center">
-										6
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-6" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										6</div>
 								</div>
-								<div class="col">
-									<div id="seat-7" class="py-3 border bg-white text-center">
-										7
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-7" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										7</div>
 								</div>
-								<div class="col">
-									<div id="seat-8" class="py-3 border bg-white text-center">
-										8
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-8" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										8</div>
 								</div>
-								<div class="col">
-									<div id="seat-9" class="py-3 border bg-white text-center">
-										9
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-9" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										9</div>
 								</div>
-								<div class="col">
-									<div id="seat-10" class="py-3 border bg-white text-center">
-										10
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-10" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										10</div>
 								</div>
-								<div class="col">
-									<div id="seat-11" class="py-3 border bg-white text-center">
-										11
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-11" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										11</div>
 								</div>
-								<div class="col">
-									<div id="seat-12" class="py-3 border bg-white text-center">
-										12
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-12" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										12</div>
 								</div>
-								<div class="col">
-									<div id="seat-13" class="py-3 border bg-white text-center">
-										13
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-13" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										13</div>
 								</div>
-								<div class="col">
-									<div id="seat-14" class="py-3 border bg-white text-center">
-										14
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-14" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										14</div>
 								</div>
-								<div class="col">
-									<div id="seat-15" class="py-3 border bg-white text-center">
-										15
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-15" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										15</div>
 								</div>
-								<div class="col">
-									<div id="seat-16" class="py-3 border bg-white text-center">
-										16
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-16" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										16</div>
 								</div>
-								<div class="col">
-									<div id="seat-17" class="py-3 border bg-white text-center">
-										17
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-17" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										17</div>
 								</div>
-								<div class="col">
-									<div id="seat-18" class="py-3 border bg-white text-center">
-										18
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-18" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										18</div>
 								</div>
-								<div class="col">
-									<div id="seat-19" class="py-3 border bg-white text-center">
-										19
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-19" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										19</div>
 								</div>
-								<div class="col">
-									<div id="seat-20" class="py-3 border bg-white text-center">
-										20
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-20" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										20</div>
 								</div>
-								<div class="col">
-									<div id="seat-21" class="py-3 border bg-white text-center">
-										21
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-21" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										21</div>
 								</div>
-								<div class="col">
-									<div id="seat-22" class="py-3 border bg-white text-center">
-										22
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-22" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										22</div>
 								</div>
-								<div class="col">
-									<div id="seat-23" class="py-3 border bg-white text-center">
-										23
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-23" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										23</div>
 								</div>
-								<div class="col">
-									<div id="seat-24" class="py-3 border bg-white text-center">
-										24
-									</div>
+								<div class="col" id="seat">
+									<div id="seat-24" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										24</div>
 								</div>
 							</div>
 						</div>

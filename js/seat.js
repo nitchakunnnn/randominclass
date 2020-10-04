@@ -41,8 +41,8 @@ function setTableFunc(){
 			temp = `<div class="mb-3 row row-cols-4 g-3">`;
 			for(i=0 ; i < numStudents ; i++){
 				temp += `	<div class="col"><div class="row row-cols-2">`;
-				temp += (i*2<numStudents)?`<div class="col pr-0"><div id="seat-${i*2+1}" class="py-3 border bg-white text-center">${i*2+1}</div></div>`:``;
-				temp += (i*2+1<numStudents)?`<div class="col pl-0"><div id="seat-${i*2+2}" class="py-3 border bg-white text-center">${i*2+2}</div></div>`:``;
+				temp += (i*2<numStudents)?`<div class="col pr-0" id="seat"><div id="seat-${i*2+1}" class="py-3 text-center">${i*2+1}</div></div>`:``;
+				temp += (i*2+1<numStudents)?`<div class="col pl-0" id="seat"><div id="seat-${i*2+2}" class="py-3 text-center">${i*2+2}</div></div>`:``;
 				temp += `</div></div>`;
 			}
 			temp += `</div>`;
@@ -64,8 +64,8 @@ function setTableFunc(){
 			// make html
 			temp = `<div class="mb-3 row row-cols-6 g-3">`;
 			for(i=0 ; i < numStudents ; i++){
-				temp += `	<div class="col">
-								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
+				temp += `	<div class="col" id="seat">
+								<div id="seat-${i+1}" class="py-3 text-center">${i+1}</div>
 							</div>`;
 			}
 			temp += `</div>`;
@@ -87,8 +87,8 @@ function setTableFunc(){
 			columnDiv.style.display = "block";
 			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			for(i=0 ; i < numStudents ; i++){
-				temp += `	<div class="col">
-								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
+				temp += `	<div class="col" id="seat">
+								<div id="seat-${i+1}" class="py-3 text-center">${i+1}</div>
 							</div>`;
 			}
 			temp += `</div>`;
@@ -113,8 +113,8 @@ function setTableFunc(){
 			quantityStudents.value =  numStudents.toString();
 			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			for(i=0 ; i < numStudents ; i++){
-				temp += `	<div class="col">
-								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
+				temp += `	<div class="col" id="seat">
+								<div id="seat-${i+1}" class="py-3 text-center">${i+1}</div>
 							</div>`;
 			}
 			temp += `</div>`;
@@ -137,8 +137,8 @@ function setTableFunc(){
 			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			temp += `<div class="col"></div><div class="col"></div><div class="col"></div>`;
 			for(i=0 ; i < 25 ; i++){
-				temp += `	<div class="col">
-								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
+				temp += `	<div class="col" id="seat">
+								<div id="seat-${i+1}" class="py-3 text-center">${i+1}</div>
 							</div>`;
 			}
 			temp += `</div>`;
@@ -159,8 +159,8 @@ function setTableFunc(){
 			quantityStudents.value = numStudents.toString();
 			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			for(i=0 ; i < 26 ; i++){
-				temp += `	<div class="col">
-								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
+				temp += `	<div class="col" id="seat">
+								<div id="seat-${i+1}" class="py-3 text-center">${i+1}</div>
 							</div>`;
 				temp += (i==7||i==13||i==19)? `<div class="col"></div><div class="col"></div>`:``;
 			}
@@ -168,6 +168,7 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 	}
+	setColorSeat("#FFF","normal","1px solid #dee2e6","1rem");
 }
 
 function randomFunc(){
@@ -208,7 +209,16 @@ function randomFunc(){
 	}
 	
 	arraySetTable();
+	setColorSeat("#EFBC45","bold","1px solid #fef0ce","1.5rem");
 
+}
+function setColorSeat(bgcolor,weight,border,fontsize){
+	for(let i = 0 ; i < numStudents ; i++){
+		document.getElementById(`seat-${i+1}`).style.backgroundColor = bgcolor;
+		document.getElementById(`seat-${i+1}`).style.fontWeight = weight;
+		document.getElementById(`seat-${i+1}`).style.border = border;
+		document.getElementById(`seat-${i+1}`).style.fontSize = fontsize;
+	}
 }
 function randArray(){
 	let sumLength = 0;
@@ -239,8 +249,9 @@ function arraySetTable(){
 }
 function resetInput(){
 	document.getElementById("randomButton").disabled = true;
-	numStudents = 24;
-	numColumn = 6;
+	document.getElementById("quantityStudents").disabled = false;
 	document.getElementById("quantityStudents").value = '';
 	document.getElementById("classroom").value = '2';
+	numStudents = 24;
+	numColumn = 6;
 }
