@@ -1,6 +1,11 @@
-var arrayTable = [];
-var numStudents = [];
-var numColumn = [];
+var arrayTable = [
+	[1,2,3,4,5,6],
+	[7,8,9,10,11,12],
+	[13,14,15,16,17,18],
+	[19,20,21,22,23,24]
+];
+var numStudents = 24;
+var numColumn = 6;
 function setTableFunc(){
 
 	let result = document.getElementById("result");
@@ -20,6 +25,19 @@ function setTableFunc(){
 
 	switch(classroom.options[classroom.selectedIndex].value){
 		case '1':
+			// make array
+			numColumn = 8;
+			var arrTemp = [];
+			var intTemp = 1;
+			for(let i = 0 ; i < Math.ceil(numStudents/numColumn) ; i++){
+				arrTemp = [];
+				for(let j=0 ; j < numColumn && intTemp <= numStudents; j++){
+					arrTemp.push(intTemp);
+					intTemp++;
+				}
+				arrayTable.push(arrTemp);
+			}
+			// make html
 			temp = `<div class="mb-3 row row-cols-4 g-3">`;
 			for(i=0 ; i < numStudents ; i++){
 				temp += `	<div class="col"><div class="row row-cols-2">`;
@@ -31,6 +49,19 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 		case '2':
+			// make array
+			numColumn = 6;
+			var arrTemp = [];
+			var intTemp = 1;
+			for(let i = 0 ; i < Math.ceil(numStudents/numColumn) ; i++){
+				arrTemp = [];
+				for(let j=0 ; j < numColumn && intTemp <= numStudents; j++){
+					arrTemp.push(intTemp);
+					intTemp++;
+				}
+				arrayTable.push(arrTemp);
+			}
+			// make html
 			temp = `<div class="mb-3 row row-cols-6 g-3">`;
 			for(i=0 ; i < numStudents ; i++){
 				temp += `	<div class="col">
@@ -41,6 +72,18 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 		case '3':
+			// make array
+			var arrTemp = [];
+			var intTemp = 1;
+			for(let i = 0 ; i < Math.ceil(numStudents/numColumn) ; i++){
+				arrTemp = [];
+				for(let j=0 ; j < numColumn && intTemp <= numStudents; j++){
+					arrTemp.push(intTemp);
+					intTemp++;
+				}
+				arrayTable.push(arrTemp);
+			}
+			// make html
 			columnDiv.style.display = "block";
 			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			for(i=0 ; i < numStudents ; i++){
@@ -52,10 +95,24 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 		case '4':
+			// make array
+			numStudents = 25;
+			numColumn = 7;
+			var arrTemp = [];
+			var intTemp = 1;
+			for(let i = 0 ; i < Math.ceil(numStudents/numColumn) ; i++){
+				arrTemp = [];
+				for(let j=0 ; j < numColumn && intTemp <= numStudents; j++){
+					arrTemp.push(intTemp);
+					intTemp++;
+				}
+				arrayTable.push(arrTemp);
+			}
+			// make html
 			quantityStudents.disabled = true;
-			quantityStudents.value = '25';
-			temp = `<div class="mb-3 row row-cols-7 g-3">`;
-			for(i=0 ; i < 25 ; i++){
+			quantityStudents.value =  numStudents.toString();
+			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
+			for(i=0 ; i < numStudents ; i++){
 				temp += `	<div class="col">
 								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
 							</div>`;
@@ -64,9 +121,20 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 		case '5':
+			// make array
+			numStudents = 25;
+			numColumn = 6;
+			arrayTable = [
+				[1,2,3],
+				[4,5,6,7,8,9],
+				[10,11,12,13,14,15],
+				[16,17,18,19,20,21],
+				[22,23,24,25]
+			];
+			// make html
 			quantityStudents.disabled = true;
-			quantityStudents.value = '25';
-			temp = `<div class="mb-3 row row-cols-6 g-3">`;
+			quantityStudents.value = numStudents.toString();
+			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			temp += `<div class="col"></div><div class="col"></div><div class="col"></div>`;
 			for(i=0 ; i < 25 ; i++){
 				temp += `	<div class="col">
@@ -77,9 +145,19 @@ function setTableFunc(){
 			result.innerHTML = temp;
 			break;
 		case '6':
+			// make array
+			numStudents = 26;
+			numColumn = 8;
+			arrayTable = [
+				[1,2,3,4,5,6,7,8],
+				[9,10,11,12,13,14],
+				[15,16,17,18,19,20],
+				[21,22,23,24,25,26]
+			];
+			// make html
 			quantityStudents.disabled = true;
-			quantityStudents.value = '26';
-			temp = `<div class="mb-3 row row-cols-8 g-3">`;
+			quantityStudents.value = numStudents.toString();
+			temp = `<div class="mb-3 row row-cols-${numColumn} g-3">`;
 			for(i=0 ; i < 26 ; i++){
 				temp += `	<div class="col">
 								<div id="seat-${i+1}" class="py-3 border bg-white text-center">${i+1}</div>
@@ -103,7 +181,7 @@ function randomFunc(){
 	let closeNumber = document.getElementById("closeNumber").value;
 	let notCloseNumber = document.getElementById("notCloseNumber").value;
 
-	arrayTable = getRandArray();
+	randArray();
 
 	if(isCheckBox){
 		
@@ -126,56 +204,43 @@ function randomFunc(){
 			notCloseNumber[i] = notCloseNumber[i].split(',').map(x=>+x);
 		
 		while(!isCorrect(seatNumber,rowNumber,closeNumber,notCloseNumber))
-			arrayTable = getRandArray();
+			randArray();
 	}
 	
 	arraySetTable();
 
-}// JavaScript Document// JavaScript Document// JavaScript Document
-function getRandArray(){
-	let quantityStudents = document.getElementById("quantityStudents");
-	let quantityColumn = document.getElementById("quantityColumn");
-	let numStudents = ( quantityStudents.value == '')? 24: parseInt(quantityStudents.value);
-	let numColumn = ( quantityColumn.value == '')? 6: parseInt(quantityColumn.value);
-
-	let ind = 0;
-	let arraySequence2d = [];
-	let temp = [];
-	let arraySequence = (Array.from({length: numStudents}, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
-	for(let i = 0 ; i < quantityColumn ; i++){
-		temp = [];
-		for(let j=0 ; j < Math.floor(numStudents/quantityColumn)+((numStudents%quantityColumn-(i)>0)?1:0); j++){
-			temp.push(arraySequence[ind]);
-			ind++;
-		}
-		arraySequence2d.push(temp);
+}
+function randArray(){
+	let sumLength = 0;
+	for(let subArray of arrayTable){
+		sumLength += subArray.length;
 	}
+	let arraySequence = (Array.from({length: numStudents}, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
+	var intTemp = 0;
+	for(let i = 0 ; i < arrayTable.length ; i++){
+		for(let j = 0 ; j < arrayTable[i].length ; j++){
+			arrayTable[i][j] = arraySequence[intTemp];
+			intTemp++;
+		}
+	}
+
 }
 function isCorrect(seatNumber,rowNumber,closeNumber,notCloseNumber){
-	for(let i=0;i<arraySequence.length;i++){
-		let setArraySequence = new Set(arraySequence[i]);
-		for(let j=0;j<notSameGroup.length;j++){
-			let setNotSameGroup = new Set(notSameGroup[j]);
-			let con1 = new Set([...setArraySequence].filter(x => setNotSameGroup.has(x)));
-			if(con1.size>1)
-				return false;
-		}
-	}
-	if(document.getElementById("sameGroup").value!=''){
-		for(let i=0;i<sameGroup.length;i++){
-			let con = false;
-			for(let j=0;j<arraySequence.length;j++){
-				if(sameGroup[i].every(val => arraySequence[j].includes(val)))
-					con = true;
-			}
-			if(!con)
-				return false;
-		}
-	}
 	return true;
 }
 function arraySetTable(){
+	var intTemp = 1;
+	for(let i = 0 ; i < arrayTable.length ; i++){
+		for(let j = 0 ; j < arrayTable[i].length ; j++){
+			document.getElementById(`seat-${intTemp}`).innerHTML = arrayTable[i][j];
+			intTemp++;
+		}
+	}
 }
-function randomButtonDisabled(){
+function resetInput(){
 	document.getElementById("randomButton").disabled = true;
+	numStudents = 24;
+	numColumn = 6;
+	document.getElementById("quantityStudents").value = '';
+	document.getElementById("classroom").value = '2';
 }
