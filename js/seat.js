@@ -179,6 +179,7 @@ function randomFunc(){
 	let isCheckBox = document.getElementById("checkCondition").checked;
 	let seatNumber = document.getElementById("seatNumber").value;
 	let rowNumber = document.getElementById("rowNumber").value;
+	let notRowNumber = document.getElementById("notRowNumber").value;
 	let closeNumber = document.getElementById("closeNumber").value;
 	let notCloseNumber = document.getElementById("notCloseNumber").value;
 
@@ -190,21 +191,27 @@ function randomFunc(){
 		seatNumber = seatNumber.split('),(');
 		rowNumber = rowNumber.slice(1, -1);
 		rowNumber = rowNumber.split('),(');
+		notRowNumber = notRowNumber.slice(1, -1);
+		notRowNumber = notRowNumber.split('),(');
 		closeNumber = closeNumber.slice(1, -1);
 		closeNumber = closeNumber.split('),(');
 		notCloseNumber = notCloseNumber.slice(1, -1);
 		notCloseNumber = notCloseNumber.split('),(');
+		console.log("cutArray")
 		
 		for(let i=0 ; i<seatNumber.length ; i++)
 			seatNumber[i] = seatNumber[i].split(',').map(x=>+x);
 		for(let i=0 ; i<rowNumber.length ; i++)
 			rowNumber[i] = rowNumber[i].split(',').map(x=>+x);
+		for(let i=0 ; i<notRowNumber.length ; i++)
+			notRowNumber[i] = notRowNumber[i].split(',').map(x=>+x);
 		for(let i=0 ; i<closeNumber.length ; i++)
 			closeNumber[i] = closeNumber[i].split(',').map(x=>+x);
 		for(let i=0 ; i<notCloseNumber.length ; i++)
 			notCloseNumber[i] = notCloseNumber[i].split(',').map(x=>+x);
+		console.log("mapArray")
 		
-		while(!isCorrect(seatNumber,rowNumber,closeNumber,notCloseNumber))
+		while(!isCorrect(seatNumber,rowNumber,notRowNumber,closeNumber,notCloseNumber))
 			randArray();
 	}
 	
@@ -221,10 +228,6 @@ function setColorSeat(bgcolor,weight,border,fontsize){
 	}
 }
 function randArray(){
-	let sumLength = 0;
-	for(let subArray of arrayTable){
-		sumLength += subArray.length;
-	}
 	let arraySequence = (Array.from({length: numStudents}, (_, i) => i + 1)).sort(() => Math.random() - 0.5);
 	var intTemp = 0;
 	for(let i = 0 ; i < arrayTable.length ; i++){
@@ -235,7 +238,58 @@ function randArray(){
 	}
 
 }
-function isCorrect(seatNumber,rowNumber,closeNumber,notCloseNumber){
+function isCorrect(seatNumberArray,rowNumberArray,notRowNumberArray,closeNumberArray,notCloseNumberArray){
+	let isFound = true;
+	let tempDesk = 0;
+	console.log("isCorrect")
+	if(seatNumberArray[0].length>1){
+		for(let seatNumber of seatNumberArray){
+			isFound = false;
+			tempDesk = 1;
+			for(let row=0 ; row<arrayTable.length ; row++)
+				for(let seat of arrayTable[row]){
+					if(seat == seatNumber[0] && tempDesk == seatNumber[1])
+						isFound = true;
+					tempDesk++;
+				}
+			if(!isFound)
+				return false;
+		}
+	}
+	if(rowNumberArray[0].length>1){
+		for(let rowNumber of rowNumberArray){
+			isFound = false;
+			for(let row=0 ; row<arrayTable.length ; row++)
+				for(let seat of arrayTable[row])
+					if(seat == rowNumber[0] && row+1 == rowNumber[1])
+						isFound = true;
+			if(!isFound)
+				return false;
+		}
+	}
+	if(notRowNumberArray[0].length>1){
+		for(let notRowNumber of notRowNumberArray)
+			for(let row=0 ; row<arrayTable.length ; row++)
+				for(let seat of arrayTable[row])
+					if(seat == notRowNumber[0] && row+1 == notRowNumber[1])
+						return false;
+	}
+	if(closeNumberArray[0].length>1)
+		for(let closeNumber of closeNumberArray){
+			isFound = false;
+			for(let row of arrayTable)
+				for(let i=1 ; i<row.length ; i++)
+					if((row[i-1] == closeNumber[0] && row[i] == closeNumber[1])||(row[i-1] == closeNumber[1] && row[i] == closeNumber[0]))
+						isFound = true;
+			if(!isFound)
+				return false;
+		}
+	if(notCloseNumberArray[0].length>1)
+		for(let notCloseNumber of notCloseNumberArray)
+			for(let row of arrayTable)
+				for(let i=1 ; i<row.length ; i++)
+					if((row[i-1] == notCloseNumber[0] && row[i] == notCloseNumber[1])||(row[i-1] == notCloseNumber[1] && row[i] == notCloseNumber[0]))
+						return false;
 	return true;
 }
 function arraySetTable(){
@@ -254,4 +308,8 @@ function resetInput(){
 	document.getElementById("classroom").value = '2';
 	numStudents = 24;
 	numColumn = 6;
+	columnDiv.style.display = "none";
+	document.getElementById("checkCondition").checked = false;
+	checkConditionFunc();
+	setTableFunc()
 }
