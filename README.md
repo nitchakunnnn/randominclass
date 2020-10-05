@@ -30,6 +30,7 @@ Set up a table with a specific number of people                                 
 ### *Random grouping*
 ![image](https://user-images.githubusercontent.com/71317449/94757855-b11f6f00-03c5-11eb-88e9-124d3484f293.png)
 ### *Random seats*
+![image](https://user-images.githubusercontent.com/71317449/95044168-f535ab00-0708-11eb-899f-0eca090eba84.png)
 --------------------------------------------------------------------------------
 
 ## Links
