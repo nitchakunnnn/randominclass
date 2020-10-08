@@ -216,7 +216,7 @@ function randomFunc(){
 	}
 	
 	arraySetTable();
-	setColorSeat("#EFBC45","bold","1px solid #fef0ce","1.5rem");
+	setColorSeat("#EFBC45","bold","1px solid #fef0ce","1rem");
 
 }
 function setColorSeat(bgcolor,weight,border,fontsize){
