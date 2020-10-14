@@ -62,6 +62,7 @@ function getRandArray(){
 			ind++;
 		}
 		temp.sort();
+		console.log(temp);
 		arraySequence2d.push(temp);
 	}
 	return arraySequence2d
