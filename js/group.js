@@ -153,6 +153,12 @@ function randomFunc() {
   let quantityStudents = document.getElementById("quantityStudents").value;
   let quantityGroups = document.getElementById("quantityGroups").value;
   let menn = parseInt(document.getElementById("men").value);
+  let headGroup = JSON.parse(
+    "[" + document.getElementById("headGroup").value + "]"
+  );
+  let notInGroup = JSON.parse(
+    "[" + document.getElementById("notInGroup").value + "]"
+  );
 
   let quantityStudentsInt = parseInt(quantityStudents);
   let quantityGroupsInt = parseInt(quantityGroups);
@@ -183,9 +189,23 @@ function randomFunc() {
     } else {
       shuffle(arraySequence);
     }
+    notInGroup.concat(headGroup).forEach((i) => {
+      const index = arraySequence.indexOf(i);
+      if (index > -1) {
+        arraySequence.splice(arraySequence.indexOf(i), 1);
+      }
+    });
   } else {
     shuffle(arraySequence);
   }
+
+  arraySequence = headGroup.concat(arraySequence);
+  //   const index = array.indexOf(5);
+  //   if (index > -1) {
+  //     array.splice(index, 1);
+  //   }
+
+  console.log(table);
 
   for (let i = 0; i < table[0].length; i++) {
     for (let j = 0; j < table.length; j++) {
