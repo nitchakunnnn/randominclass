@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="icon" href="img/icon.png" type="image/png" />
+
+	<title>Random In Class | Seats</title>
+</head>
+
+<body class="bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img class="mr-2" src="img/icon.png" height="32">
+				Random In Class
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+				aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExample07">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" aria-current="page" href="index.html">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
+							aria-expanded="false">Random</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdown07">
+							<li><a class="dropdown-item" href="seat.html">Random Seats</a></li>
+							<li><a class="dropdown-item" href="group.html">Random Grouping</a></li>
+							<li><a class="dropdown-item" href="sequence.html">Random Order</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<section class="py-5 container-fluide bg-white">
+			<div class="row py-lg-5 section-header">
+				<div class="col">
+					<div class="row justify-content-md-center">
+						<div class="col-lg-5 col-md-5 text-left align-self-center">
+							<h1 class="font-weight-light display-3">Random Seats</h1>
+							<p class="lead text-muted">
+								Is the seating arrangement of each person in the room by random number under the
+								conditions
+							</p>
+						</div>
+						<div class="col-lg-3 col-md-3">
+							<img src="img/7.gif" width="100%" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<form class="needs-validation">
+						<div class="mb-3 mt-3">
+							<label for="quantityStudents" class="form-label">Number of Students</label>
+							<input class="form-control" id="quantityStudents" value="24" required=""
+								onclick="setTableFunc()" oninput="setTableFunc()" />
+						</div>
+						<div class="mb-3">
+							<label for="classroom" class="form-label">Class</label>
+							<select class="form-select" id="classroom" onclick="setTableFunc()"
+								onselect="setTableFunc()" required="">
+								<option value="1">Normal Class</option>
+								<option value="2" selected="">New Normal Class</option>
+								<option value="3">Indicate column</option>
+								<option value="4">5/2 (Δ)</option>
+								<option value="5">5/5 (λ)</option>
+								<option value="6">5/6 (α)</option>
+							</select>
+						</div>
+						<div class="mb-3" id="columnDiv" style="display: none">
+							<label for="quantityColumn" class="form-label">Number of column</label>
+							<input class="form-control" id="quantityColumn" value="6" oninput="setTableFunc()" />
+						</div>
+						<div class="mb-3 form-check">
+							<input class="form-check-input" type="checkbox" value="" id="checkCondition"
+								onclick="checkConditionFunc()" />
+							<label class="form-check-label" for="checkCondition">
+								Conditions
+							</label>
+						</div>
+						<div id="conditionCheckedDiv" style="display: none">
+							<div class="mb-3">
+								<label for="seatNumber" class="form-label">Lock the seat</label>
+								<input class="form-control" id="seatNumber"
+									placeholder="(number,seat) e.g. (1,2),(3,4)..." />
+							</div>
+							<div class="mb-3">
+								<label for="rowNumber" class="form-label">Inverse Lock the row...</label>
+								<input class="form-control" id="rowNumber"
+									placeholder="(number,row) e.g. (1,2),(3,4)..." />
+							</div>
+							<div class="mb-3">
+								<label for="notRowNumber" class="form-label">Lock ...</label>
+								<input class="form-control" id="notRowNumber"
+									placeholder="(number,row) e.g. (1,2),(3,4)..." />
+							</div>
+							<div class="mb-3">
+								<label for="closeNumber" class="form-label">Couple Seat</label>
+								<input class="form-control" id="closeNumber"
+									placeholder="(number,number) e.g. (1,2),(3,4)..." />
+							</div>
+							<div class="mb-3">
+								<label for="notCloseNumber" class="form-label">Inverse Couple Seat</label>
+								<input class="form-control" id="notCloseNumber"
+									placeholder="(number,number) e.g. (1,2),(3,4)..." />
+							</div>
+						</div>
+						<div class="mb-3 mt-3">
+							<button type="button" class="btn btn-primary" id="randomButton" onclick="randomFunc()">
+								Random
+							</button>
+							<button type="button" class="btn btn-secondary" onclick="clearResult(); resetInput();">
+								Clear
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div class="mb-3 mt-3">
+						<label for="result" class="form-label">Result</label>
+						<div id="result">
+							<div class="mb-3 row row-cols-6 g-3">
+								<div class="col" id="seat">
+									<div id="seat-1" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										1</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-2" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										2</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-3" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										3</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-4" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										4</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-5" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										5</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-6" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										6</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-7" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										7</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-8" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										8</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-9" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										9</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-10" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										10</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-11" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										11</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-12" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										12</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-13" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										13</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-14" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										14</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-15" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										15</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-16" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										16</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-17" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										17</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-18" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										18</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-19" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										19</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-20" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										20</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-21" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										21</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-22" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										22</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-23" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										23</div>
+								</div>
+								<div class="col" id="seat">
+									<div id="seat-24" class="py-3 text-center"
+										style="background-color: rgb(255, 255, 255); font-weight: normal; border: 1px solid rgb(222, 226, 230);">
+										24</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="container my-5 pt-5 text-muted text-center text-small">
+		<hr class="footer-divider" />
+		<p class="mb-1">© 2021 TulipTGR and Team</p>
+		<ul class="list-inline">
+			<li class="list-inline-item">
+				<a href="https://github.com/tuliptgr/randominclass" target="_blank">Github</a>
+			<li class="list-inline-item"><a href="https://github.com/tuliptgr/randominclass/issues"
+					target="_blank">Report</a></li>
+			</li>
+		</ul>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="js/seat.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
