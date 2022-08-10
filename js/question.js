@@ -22,8 +22,8 @@ questions = [
     ['สิ่งแวดล้อม','Environment'],
     ['อาชีพ','Career'],
     ['ความคิด','Idea'],
-    ['ผู้สูงอายุ','Elder'],
-    ['เพศศึกษา','Sex education'],
+    ['ผนาง','Elder'],
+    ['นาง','Sex education'],
 ]
 
 function logKey(e) {
